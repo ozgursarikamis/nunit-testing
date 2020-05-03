@@ -28,5 +28,25 @@ namespace Calculator.Tests
              * Is.LessThanOrEqualTo()
              */
         }
+
+        [Test]
+        public void ShouldHaveDefaultRandomGeneratedName()
+        {
+            var sut = new PlayCharacter();
+            Assert.That(sut.Name, Is.Not.Empty);
+        }
+        [Test]
+        public void ShouldHaveANickName()
+        {
+            var sut = new PlayCharacter();
+            // Assert.That(sut.Name, Is.Not.Empty);
+            Assert.That(sut.NickName, Is.Null);
+        }
+        [Test]
+        public void ShouldBeNewbie()
+        {
+            var sut = new PlayCharacter(); 
+            Assert.That(sut.IsNoob, Is.True);
+        }
     }
 }
