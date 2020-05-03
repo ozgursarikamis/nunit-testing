@@ -23,8 +23,8 @@ namespace Calculator
             {
                 "Long Bow",
                 "Short Bow",
-                "Short Sword",                       
-                
+                "Short Sword",
+                ""
                 // "Long Bow",
                 // "Staff Of Wonder"
             };
