@@ -1,6 +1,6 @@
 using System;
 
-namespace Calculator.Tests
+namespace Calculator
 {
     public enum SpecialDates
     {

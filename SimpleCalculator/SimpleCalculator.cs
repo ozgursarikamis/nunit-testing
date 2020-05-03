@@ -1,4 +1,6 @@
-﻿namespace Calculator
+﻿using System;
+
+namespace Calculator
 {
     public class Calculator
     {
@@ -14,6 +16,9 @@
 
         public int Divide(int value, int by)
         {
+            if (value > 100) 
+                throw new ArgumentOutOfRangeException(nameof(value)); 
+
             return value / by;
         }
     }
