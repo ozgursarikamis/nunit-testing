@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Linq;
+using NUnit.Framework;
 
 namespace Calculator.Tests
 {
@@ -49,12 +50,12 @@ namespace Calculator.Tests
             Assert.That(sut.IsNoob, Is.True);
         }
 
-        [Test]
-        public void ShouldHaveNoEmptyDefaultWeapons()
-        {
-            var sut = new PlayCharacter();
-            Assert.That(sut.Weapons, Is.All.Not.Empty);
-        }
+        //[Test]
+        //public void ShouldHaveNoEmptyDefaultWeapons()
+        //{
+        //    var sut = new PlayCharacter();
+        //    Assert.That(sut.Weapons, Is.All.Not.Empty);
+        //}
         [Test]
         public void ShouldHaveALongBow()
         {
@@ -93,7 +94,22 @@ namespace Calculator.Tests
         public void ShouldBeOrderedAlphabetically()
         {
             var sut = new PlayCharacter();
-            Assert.That(sut.Weapons, Is.Ordered);
+            Assert.That(sut.Weapons.OrderBy(x => x), Is.Ordered);
+        }
+
+        // REFERENCE EQUALITY TESTS:
+        [Test]
+        public void ReferenceEqualityTest()
+        {
+            var p1 = new PlayCharacter();
+            var p2 = new PlayCharacter();
+
+            // Assert.That(p1, Is.SameAs(p2));
+
+            //var somePlayer = p1;
+            //Assert.That(p1, Is.SameAs(somePlayer));
+
+            Assert.That(p1, Is.Not.SameAs(p2));
         }
     }
 }
