@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.ComTypes;
 using NUnit.Framework;
 
 namespace Calculator.Tests
