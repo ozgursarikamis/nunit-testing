@@ -13,7 +13,6 @@ namespace Calculator.Tests.DataDrivenTests
             var sut = new MemoryCalculator();
 
             sut.Add(numToAdd);
-
             sut.Divide(numToDivideBy);
         }
     }
