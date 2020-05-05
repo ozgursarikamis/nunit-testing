@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using NUnit.Framework;
 
 namespace Calculator.Tests
@@ -111,5 +112,19 @@ namespace Calculator.Tests
 
             Assert.That(p1, Is.Not.SameAs(p2));
         }
+
+
+        [OneTimeSetUp]
+        public void BeforeAnyTestStarted()
+        {
+            Console.WriteLine("*** Before PlayerCharacterTests");
+        }
+
+        [OneTimeTearDown]
+        public void AfterAllTestsFinished()
+        {
+            Console.WriteLine("*** After PlayerCharacterTests");
+        }
+
     }
 }
